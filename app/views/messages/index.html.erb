@@ -1,33 +1,7 @@
 <div class="row">
   <div class="col-md-4">
-    <%= form_for(Message.new) do |f| %>
-    
-      <div class="msg-board">
-        <div class="msg-content">
-          <label for="name">Name</label> <%= f.text_field :name, :placeholder => "Name", class: "msg-name" %>
-        </div>
-        <div class="msg-content">
-          <label for="body">Comment</label> <%= f.text_area :body, :placeholder => "Leave a message!", class: "msg-textarea" %>
-        </div>
-        <div class="msg-content">
-          <%= f.submit class: "btn btn-lg btn-primary msg-submit" %>
-        </div>
-      </div><!--msg-board-->
-      
-      <% if @message.errors.present? %>
-        <div class="alert alert-danger">
-          <%= alert %>
-          <ul>
-            <% @message.errors.full_messages.each do |full_message| %>
-              <li>
-                <%= full_message %>
-              </li>
-            <% end %> 
-          </ul>
-        </div>
-      <% end %>
-      
-    <% end %>
+    <% #部分テンプレートを読み込んでいる %>
+    <%= render 'form' %>
   </div><!--cols-md-4-->
     <div class="col-md-8">
       <div class="panel panel-default">
