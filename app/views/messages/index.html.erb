@@ -13,6 +13,8 @@
             <div class="msg-list">
               <span class="label label-info"><%= message.name %></span>
               <p><span class="msg-body"><%= message.body %></span></p>
+              (<%= link_to "edit" , edit_message_path(message) %>)
+              <br>
             </div>
           <% end %>
         </div><!--panel-body-->
