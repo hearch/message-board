@@ -13,7 +13,8 @@
             <div class="msg-list">
               <span class="label label-info"><%= message.name %></span>
               <p><span class="msg-body"><%= message.body %></span></p>
-              (<%= link_to "edit" , edit_message_path(message) %>)
+              ( <%= link_to "edit" , edit_message_path(message) %> / 
+              <%=link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %> )
               <br>
             </div>
           <% end %>
