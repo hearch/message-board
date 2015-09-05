@@ -1,22 +1,32 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    メッセージ一覧
-  </div>
-    
-  <div class="panel-body">
-    <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
-      <br>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for(Message.new) do |f| %>
+      <div class="msg-board">
+        <div class="msg-content">
+          <label for="name">Name</label> <%= f.text_field :name, :placeholder => "Name", class: "msg-name" %>
+        </div>
+        <div class="msg-content">
+          <label for="body">Comment</label> <%= f.text_area :body, :placeholder => "Leave a message!", class: "msg-textarea" %>
+        </div>
+        <div class="msg-content">
+          <%= f.submit class: "btn btn-lg btn-primary msg-submit" %>
+        </div>
+      </div><!--msg-board-->
     <% end %>
-  </div>
-</div>
-
-<%= form_for(Message.new) do |f| %>
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
+  </div><!--cols-md-4-->
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        Latest Comments
+        </div>
+        <div class="panel-body">
+          <% @messages.each do |message| %>
+            <div class="msg-list">
+              <span class="label label-info"><%= message.name %></span>
+              <p><span class="msg-body"><%= message.body %></span></p>
+            </div>
+          <% end %>
+        </div><!--panel-body-->
+      </div><!--panel panel-default-->
+    </div><!--cols-md-8-->
+</div><!--row-->

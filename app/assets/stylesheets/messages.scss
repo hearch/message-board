@@ -1,3 +1,61 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#wrapper {
+    padding-top: 20px;
+    background: #00bfff;
+    font-family: Verdana, Arial, san-serif;
+    font-size: 18px;    
+}
+
+.navbar a {
+    font-size: 36px;
+    color: #fff;
+}
+
+.msg-content {
+    margin-bottom: 10px;
+}
+
+
+.msg-name, .msg-textarea,.msg-submit  {
+    width: 100%;
+}
+
+.msg-textarea {
+    height: 100px;
+}
+
+.msg-submit {
+    height: 60px;
+}
+
+.msg-board {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.msg-list {
+    padding: 15px;
+    border-bottom: 1px dashed #bbb;
+}
+
+.msg-list:last-child {
+    border-bottom: 0px;
+}
+
+.msg-list p {
+    padding-top: 10px;
+    word-wrap: break-word;
+}

@@ -8,15 +8,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
     <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Message Board</a>
+        </div>
+      </div><!--container-->
+    </nav>
     <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Message Board</a>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <%= yield %>
-  </div>
+      <%= yield %>
+    </div><!--container-->
+  </div><!--wrapper-->
 </body>
 </html>
