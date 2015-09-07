@@ -28,6 +28,7 @@ class MessagesController < ApplicationController
 
   ## ここから追記
   def create
+    binding.pry
     @message = Message.new(message_params)
     
     if @message.save
